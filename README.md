@@ -2,11 +2,15 @@
 
 <h1 align="center">ipfs</h1>
 
-> 🏄‍♀️ Ocean Protocol's public IPFS Node, setup to be a public gateway, and to provide some access to its HTTP API for everyone.
+> 👩🏽‍🚀 Ocean Protocol's public IPFS node & gateway.
 > [ipfs.oceanprotocol.com](https://ipfs.oceanprotocol.com)
 
 [![Build Status](https://travis-ci.com/oceanprotocol/ipfs.svg?branch=master)](https://travis-ci.com/oceanprotocol/ipfs)
 [![js oceanprotocol](https://img.shields.io/badge/js-oceanprotocol-7b1173.svg)](https://github.com/oceanprotocol/eslint-config-oceanprotocol)
+
+This repo holds a simple React app built with Webpack serving as the frontpage of [ipfs.oceanprotocol.com](https://ipfs.oceanprotocol.com) from where you can add files to IPFS via drag and drop.
+
+General IPFS integration within the Ocean Protocol stack is outlined in [OEP-15: Distributed Asset File Storage with IPFS](https://github.com/oceanprotocol/OEPs/tree/master/15).
 
 <img width="1308" alt="Screen Shot 2019-10-16 at 17 25 08" src="https://user-images.githubusercontent.com/90316/66933885-f8d4ab80-f039-11e9-846e-91e549c2dbd2.png">
 
@@ -22,8 +26,6 @@
 ---
 
 ## Development
-
-This repo holds a simple React app built with Webpack serving as the frontpage of ipfs.oceanprotocol.com.
 
 ```bash
 npm i

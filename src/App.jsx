@@ -1,9 +1,10 @@
 import '@babel/polyfill'
 import React from 'react'
-import Add from './components/Add'
-import Logo from '@oceanprotocol/art/logo/logo-white.svg'
 import './styles/global.css'
 import './App.css'
+
+import Add from './components/Add'
+import Logo from '@oceanprotocol/art/logo/logo-white.svg'
 import { title, description } from '../config'
 import Footer from './components/Footer'
 
