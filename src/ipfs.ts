@@ -1,7 +1,7 @@
 import ipfsClient from 'ipfs-http-client'
-import { ipfsNodeUri } from '../config'
+import { ipfsNodeUri } from '../site.config'
 
-export async function saveToIpfs(files) {
+export async function saveToIpfs(files: File[]) {
   const { hostname, port, protocol } = new URL(ipfsNodeUri)
 
   const ipfsConfig = {
@@ -20,7 +20,7 @@ export async function saveToIpfs(files) {
   }
   const options = {
     wrapWithDirectory: true,
-    progress: prog => console.log(`received: ${prog}`)
+    progress: (prog: number) => console.log(`received: ${prog}`)
   }
 
   try {

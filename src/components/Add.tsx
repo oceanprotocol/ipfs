@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { saveToIpfs } from '../ipfs'
-import { ipfsGateway } from '../../config'
+import { ipfsGateway } from '../../site.config'
 import Dropzone from './Dropzone'
-import styles from './Add.css'
+import styles from './Add.module.css'
 import Spinner from './Spinner'
 
 export default function Add() {
-  const [fileHash, setFileHash] = useState(null)
+  const [fileHash, setFileHash] = useState()
   const [loading, setLoading] = useState(false)
 
-  const handleCaptureFile = async files => {
+  const handleCaptureFile = async (files: File[]) => {
     setLoading(true)
     const cid = await saveToIpfs(files)
     setFileHash(cid)

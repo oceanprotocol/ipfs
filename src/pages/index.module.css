@@ -1,38 +1,22 @@
 @import '../styles/_variables.css';
 
-.app {
-  padding: var(--spacer);
-  background: var(--brand-black);
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-@media screen and (min-width: 640px) {
-  .app {
-    height: auto;
-    min-height: calc(100vh - (var(--page-frame) * 2) - (var(--spacer) * 2));
-  }
-}
-
 .header {
   width: 100%;
   margin-top: var(--spacer);
 }
 
-.appTitle {
+.title {
   margin-top: var(--spacer);
   font-size: var(--font-size-h2);
 }
 
 @media screen and (min-width: 640px) {
-  .appTitle {
+  .title {
     font-size: var(--font-size-h1);
   }
 }
 
-.appDescription {
+.description {
   font-size: var(--font-size-large);
   color: var(--brand-grey-lighter);
   max-width: 40rem;
@@ -40,7 +24,7 @@
   margin-right: auto;
 }
 
-.logo {
+.header svg {
   width: 80px;
   height: 80px;
 }

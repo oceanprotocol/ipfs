@@ -1,6 +1,6 @@
 import React from 'react'
-import { links } from '../../config'
-import styles from './Footer.css'
+import { links } from '../../site.config'
+import styles from './Footer.module.css'
 
 export default function Footer() {
   const year = new Date().getFullYear()

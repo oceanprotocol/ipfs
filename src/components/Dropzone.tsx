@@ -1,15 +1,16 @@
 import React, { useCallback } from 'react'
-import PropTypes from 'prop-types'
 import { useDropzone } from 'react-dropzone'
-import styles from './Dropzone.css'
+import styles from './Dropzone.module.css'
 
-Dropzone.propTypes = {
-  handleOnDrop: PropTypes.func.isRequired,
-  disabled: PropTypes.bool,
-  multiple: PropTypes.bool
-}
-
-export default function Dropzone({ handleOnDrop, disabled, multiple }) {
+export default function Dropzone({
+  handleOnDrop,
+  disabled,
+  multiple
+}: {
+  handleOnDrop(files: File[]): void
+  disabled?: boolean
+  multiple?: boolean
+}) {
   const onDrop = useCallback(acceptedFiles => handleOnDrop(acceptedFiles), [
     handleOnDrop
   ])
