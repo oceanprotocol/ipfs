@@ -21,15 +21,13 @@ export default function Add() {
       {loading ? (
         <Spinner />
       ) : fileHash ? (
-        <div>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={`${ipfsGateway}/ipfs/${fileHash}`}
-          >
-            {fileHash}
-          </a>
-        </div>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={`${ipfsGateway}/ipfs/${fileHash}`}
+        >
+          ipfs://{fileHash}
+        </a>
       ) : (
         <Dropzone multiple={false} handleOnDrop={handleCaptureFile} />
       )}

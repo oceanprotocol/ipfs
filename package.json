@@ -4,7 +4,9 @@
   "description": "Ocean Protocol's Public IPFS Node.",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack",
+    "test": "eslint ./src/**/*.{js,jsx}",
+    "format": "prettier ./src/**/*.{css,yml,js,jsx,json} --write"
   },
   "author": "Matthias Kretschmann <matthias@oceanprotocol.com>",
   "license": "Apache-2.0",
@@ -49,5 +51,8 @@
     "plugins": [
       "prettier"
     ]
+  },
+  "engines": {
+    "node": "10.x"
   }
 }

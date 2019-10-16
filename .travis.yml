@@ -1,0 +1,14 @@
+dist: xenial
+language: node_js
+node_js: node
+
+cache: npm
+
+# will run `npm install` automatically here
+
+script:
+  - npm test
+  - npm run build
+
+notifications:
+  email: false

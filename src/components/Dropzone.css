@@ -3,7 +3,7 @@
 .dropzone {
   border: 0.2rem dashed var(--brand-grey-light);
   border-radius: calc(var(--border-radius) * 2);
-  padding: calc(var(--spacer) * 2);
+  padding: calc(var(--spacer) * 2) var(--spacer);
   transition: 0.2s ease-out;
   cursor: pointer;
 }
