@@ -8,7 +8,7 @@
 [![Build Status](https://travis-ci.com/oceanprotocol/ipfs.svg?branch=master)](https://travis-ci.com/oceanprotocol/ipfs)
 [![js oceanprotocol](https://img.shields.io/badge/js-oceanprotocol-7b1173.svg)](https://github.com/oceanprotocol/eslint-config-oceanprotocol)
 
-This repo holds a simple React app built with Webpack serving as the frontpage of [ipfs.oceanprotocol.com](https://ipfs.oceanprotocol.com) from where you can add files to IPFS via drag and drop.
+This repo holds a simple React app built with [Next.js](https://nextjs.org) serving as the frontpage of [ipfs.oceanprotocol.com](https://ipfs.oceanprotocol.com) from where you can add files to IPFS via drag and drop.
 
 General IPFS integration within the Ocean Protocol stack is outlined in [OEP-15: Distributed Asset File Storage with IPFS](https://github.com/oceanprotocol/OEPs/tree/master/15).
 
@@ -32,7 +32,7 @@ npm i
 npm start
 ```
 
-Will start a live-reloading local server, reachable under [localhost:8080](http://localhost:8080).
+Will start a live-reloading local server, reachable under [localhost:3000](http://localhost:3000).
 
 ## Production
 

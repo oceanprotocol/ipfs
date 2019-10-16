@@ -15,11 +15,13 @@
   outline: 0;
 }
 
-.dropzone.dragover {
+.dragover {
+  composes: dropzone;
   border-color: var(--brand-pink);
 }
 
-.dropzone.disabled {
+.disabled {
+  composes: dropzone;
   opacity: 0.5;
   pointer-events: none;
 }

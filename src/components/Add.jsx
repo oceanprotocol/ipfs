@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { saveToIpfs } from '../ipfs'
 import { ipfsGateway } from '../../config'
 import Dropzone from './Dropzone'
-import './Add.css'
+import styles from './Add.css'
 import Spinner from './Spinner'
 
 export default function Add() {
@@ -17,7 +17,7 @@ export default function Add() {
   }
 
   return (
-    <div className="add">
+    <div className={styles.add}>
       {loading ? (
         <Spinner />
       ) : fileHash ? (

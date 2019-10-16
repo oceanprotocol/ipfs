@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { useDropzone } from 'react-dropzone'
-import './Dropzone.css'
+import styles from './Dropzone.css'
 
 Dropzone.propTypes = {
   handleOnDrop: PropTypes.func.isRequired,
@@ -25,10 +25,10 @@ export default function Dropzone({ handleOnDrop, disabled, multiple }) {
     <div
       {...getRootProps({
         className: isDragActive
-          ? 'dragover'
+          ? styles.dragover
           : disabled
-          ? 'disabled'
-          : 'dropzone'
+          ? styles.disabled
+          : styles.dropzone
       })}
     >
       <input {...getInputProps({ multiple })} />

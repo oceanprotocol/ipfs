@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Ocean Protocol's Public IPFS Node.",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "NODE_ENV=production webpack",
+    "start": "next dev",
+    "build": "next build",
+    "server": "next start",
     "test": "eslint ./src/**/*.{js,jsx}",
     "format": "prettier ./src/**/*.{css,yml,js,jsx,json} --write"
   },
@@ -13,32 +14,21 @@
   "dependencies": {
     "@oceanprotocol/art": "^2.2.0",
     "@oceanprotocol/typographies": "^0.1.0",
+    "@zeit/next-css": "^1.0.1",
     "ipfs-http-client": "^38.2.0",
+    "next": "9.1.1",
+    "next-svgr": "0.0.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-dropzone": "^10.1.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/polyfill": "^7.6.0",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/preset-react": "^7.6.3",
-    "@svgr/webpack": "^4.3.3",
-    "babel-loader": "^8.0.6",
-    "copy-webpack-plugin": "^5.0.4",
-    "css-loader": "^3.2.0",
     "eslint": "^6.5.1",
     "eslint-config-oceanprotocol": "^1.5.0",
     "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
-    "mini-css-extract-plugin": "^0.8.0",
-    "prettier": "^1.18.2",
-    "style-loader": "^1.0.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.8.2"
+    "prettier": "^1.18.2"
   },
   "eslintConfig": {
     "extends": [
