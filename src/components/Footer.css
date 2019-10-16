@@ -1,0 +1,31 @@
+@import '../styles/_variables.css';
+
+.footer {
+  width: 100%;
+  font-size: var(--font-size-mini);
+  padding: var(--spacer) 0;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-end;
+  text-align: left;
+  margin-top: var(--spacer);
+}
+
+.footer,
+.footer a {
+  color: var(--brand-grey-light);
+}
+
+.footer > div {
+  flex: 1 1 48%;
+}
+
+.footer > div:last-child {
+  text-align: right;
+}
+
+.footer > div:last-child a {
+  display: inline-block;
+  margin-left: var(--spacer);
+}
