@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import Head from 'next/head'
 import Footer from './components/Footer'
 import styles from './Layout.module.css'
@@ -8,7 +8,7 @@ export default function Layout({
   children,
   pageTitle = title
 }: {
-  children: any
+  children: ReactNode
   pageTitle?: string
 }) {
   return (
