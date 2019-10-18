@@ -1,5 +1,19 @@
 @import '_variables.css';
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-size: var(--font-size-root);
 }
@@ -78,6 +92,33 @@ picture {
   height: auto;
   margin: 0 auto;
   display: block;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: calc(var(--spacer) / var(--line-height));
+  padding-left: 0;
+  list-style: none;
+  padding-left: calc(var(--spacer) / var(--line-height));
+}
+
+ul li {
+  position: relative;
+  display: block;
+  margin-bottom: 0;
+}
+
+ul li + li {
+  margin-top: calc(var(--spacer) / 4);
+}
+
+ul li:before {
+  content: ' \25AA';
+  top: -2px;
+  position: absolute;
+  left: -1rem;
+  color: var(--brand-grey-light);
+  user-select: none;
 }
 
 @import '_code.css';

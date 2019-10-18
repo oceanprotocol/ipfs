@@ -14,22 +14,22 @@ export default function useIpfsApi(config: IpfsConfig) {
   const [isIpfsReady, setIpfsReady] = useState(Boolean(ipfs))
   const [ipfsError, setIpfsError] = useState('')
 
-  async function initIpfs() {
-    if (ipfs !== null) return
-    // eslint-disable-next-line
-    ipfs = await ipfsClient(config)
-
-    try {
-      const version = await ipfs.version()
-      ipfsVersion = version.version
-    } catch (error) {
-      setIpfsError(`IPFS connection error: ${error.message}`)
-      return
-    }
-    setIpfsReady(Boolean(await ipfs.id()))
-  }
-
   useEffect(() => {
+    async function initIpfs() {
+      if (ipfs !== null) return
+      // eslint-disable-next-line
+      ipfs = await ipfsClient(config)
+
+      try {
+        const version = await ipfs.version()
+        ipfsVersion = version.version
+      } catch (error) {
+        setIpfsError(`IPFS connection error: ${error.message}`)
+        return
+      }
+      setIpfsReady(Boolean(await ipfs.id()))
+    }
+
     initIpfs()
   }, [config])
 

@@ -3,11 +3,16 @@
 .info {
   font-size: var(--font-size-small);
   text-align: left;
+  opacity: 0.8;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .info h2 {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-base);
   color: var(--brand-grey-light);
+  margin-top: var(--spacer);
 }
 
 .info code {

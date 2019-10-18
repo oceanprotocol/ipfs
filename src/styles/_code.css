@@ -17,24 +17,12 @@ pre {
   display: block;
   margin: calc(var(--spacer) / 2) 0;
   padding: 0;
-  position: relative;
   border: 1px solid var(--brand-grey-dark);
   border-radius: var(--border-radius);
-
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  max-height: 800px;
-  width: 100%;
 }
 
 pre code {
-  background: none;
-  padding: calc(var(--spacer) / 1.5);
-  white-space: pre;
+  padding: calc(var(--spacer) / 2);
   display: block;
-  overflow-wrap: normal;
-  word-wrap: normal;
-  word-break: normal;
-  float: left;
-  width: 100%;
+  white-space: pre-wrap;
 }

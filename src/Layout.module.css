@@ -3,17 +3,17 @@
 .app {
   padding: var(--spacer);
   background: var(--brand-black);
-  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  min-height: calc(100vh - (var(--spacer) * 2));
+  min-height: 100vh;
 }
 
 @media screen and (min-width: 640px) {
   .app {
-    padding: var(--spacer) calc(var(--spacer) * 2);
+    padding: calc(var(--spacer) * 2);
+    padding-bottom: var(--spacer);
     height: auto;
-    min-height: calc(100vh - (var(--page-frame) * 2) - (var(--spacer) * 2));
+    min-height: calc(100vh - var(--page-frame) * 2);
   }
 }

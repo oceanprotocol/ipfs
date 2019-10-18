@@ -4,23 +4,22 @@
   display: grid;
   gap: calc(var(--spacer) * 3);
   max-width: 40rem;
-  margin: calc(var(--spacer) * 2) auto var(--spacer) auto;
+  margin-top: calc(var(--spacer) * 2) auto var(--spacer) auto;
 }
 
 @media screen and (min-width: 1140px) {
   .grid {
-    max-width: 75rem;
+    max-width: 70rem;
     text-align: left;
     grid-template-columns: 2fr 1fr;
   }
 
   .grid > aside {
-    margin-top: calc(var(--spacer) * 3);
+    margin-top: calc(var(--spacer) * var(--line-height));
   }
 }
 
 .header {
-  width: 100%;
   margin-bottom: calc(var(--spacer) * 2);
 }
 
@@ -32,6 +31,7 @@
 @media screen and (min-width: 1140px) {
   .header svg {
     margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -46,7 +46,11 @@
   }
 }
 
+.header a,
 .description {
   font-size: var(--font-size-large);
+}
+
+.description {
   color: var(--brand-grey-lighter);
 }

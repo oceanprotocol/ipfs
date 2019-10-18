@@ -1,6 +1,8 @@
 import styles from './Info.module.css'
 
-<aside className={styles.info}>
+export default ({ children }) => (
+  <aside className={styles.info}>{children}</aside>
+)
 
 ## Gateway
 
@@ -28,5 +30,3 @@ const ipfs = ipfsClient({
   protocol: 'https'
 })
 ```
-
-</aside>

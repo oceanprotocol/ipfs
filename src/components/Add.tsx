@@ -78,7 +78,6 @@ export default function Add() {
 
   return (
     <div className={styles.add}>
-      <h2 className={styles.title}>Add a file to IPFS</h2>
       {loading ? (
         <Spinner message={message} />
       ) : fileHash ? (
