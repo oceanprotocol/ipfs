@@ -94,10 +94,8 @@ export default function Add() {
             multiple={false}
             handleOnDrop={handleOnDrop}
             disabled={!isIpfsReady}
+            error={error || ipfsError}
           />
-          {(error || ipfsError) && (
-            <div className={styles.error}>{error || ipfsError}</div>
-          )}
         </>
       )}
     </div>

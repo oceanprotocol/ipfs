@@ -2,7 +2,6 @@
 
 .info {
   font-size: var(--font-size-small);
-  text-align: left;
   opacity: 0.8;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -12,7 +11,7 @@
 .info h2 {
   font-size: var(--font-size-base);
   color: var(--brand-grey-light);
-  margin-top: var(--spacer);
+  margin-top: calc(var(--spacer) * 2);
 }
 
 .info code {

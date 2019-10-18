@@ -2,9 +2,19 @@
 
 .grid {
   display: grid;
-  gap: calc(var(--spacer) * 3);
+  gap: calc(var(--spacer) * 2);
   max-width: 40rem;
   margin-top: calc(var(--spacer) * 2) auto var(--spacer) auto;
+}
+
+@media screen and (min-width: 640px) {
+  .grid > div:first-child {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: calc(var(--spacer) * 2);
+    border-radius: var(--border-radius);
+    border-top: 1px solid var(--brand-black);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }
 
 @media screen and (min-width: 1140px) {
@@ -13,14 +23,11 @@
     text-align: left;
     grid-template-columns: 2fr 1fr;
   }
-
-  .grid > aside {
-    margin-top: calc(var(--spacer) * var(--line-height));
-  }
 }
 
 .header {
   margin-bottom: calc(var(--spacer) * 2);
+  text-align: center;
 }
 
 .header svg {
@@ -29,6 +36,10 @@
 }
 
 @media screen and (min-width: 1140px) {
+  .header {
+    text-align: left;
+  }
+
   .header svg {
     margin-left: 0;
     margin-right: 0;

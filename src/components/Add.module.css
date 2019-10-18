@@ -6,9 +6,3 @@
   word-wrap: break-word;
   word-break: break-all;
 }
-
-.error {
-  font-size: var(--font-size-small);
-  color: var(--red);
-  margin-top: var(--spacer);
-}

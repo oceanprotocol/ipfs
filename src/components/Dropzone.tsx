@@ -5,11 +5,13 @@ import styles from './Dropzone.module.css'
 export default function Dropzone({
   handleOnDrop,
   disabled,
-  multiple
+  multiple,
+  error
 }: {
   handleOnDrop(files: File[]): void
   disabled?: boolean
   multiple?: boolean
+  error?: string
 }) {
   const onDrop = useCallback(acceptedFiles => handleOnDrop(acceptedFiles), [
     handleOnDrop
@@ -33,14 +35,15 @@ export default function Dropzone({
       })}
     >
       <input {...getInputProps({ multiple })} />
-      <p>
-        {isDragActive && !isDragReject
-          ? `Drop it like it's hot!`
-          : multiple
-          ? `Drag 'n' drop some files here, or click to select files`
-          : `Drag 'n' drop a file here, or click to select a file`}
-        {}
-      </p>
+      {isDragActive && !isDragReject ? (
+        `Drop it like it's hot!`
+      ) : multiple ? (
+        `Drag 'n' drop some files here, or click to select files`
+      ) : error ? (
+        <div className={styles.error}>{error}</div>
+      ) : (
+        `Drag 'n' drop a file here, or click to select a file`
+      )}
     </div>
   )
 }

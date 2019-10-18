@@ -10,6 +10,12 @@ export interface IpfsConfig {
   port: string
 }
 
+function parseHTML(str: string) {
+  const tmp = document.implementation.createHTMLDocument()
+  tmp.body.innerHTML = str
+  return tmp.body.children
+}
+
 export default function useIpfsApi(config: IpfsConfig) {
   const [isIpfsReady, setIpfsReady] = useState(Boolean(ipfs))
   const [ipfsError, setIpfsError] = useState('')
@@ -24,7 +30,16 @@ export default function useIpfsApi(config: IpfsConfig) {
         const version = await ipfs.version()
         ipfsVersion = version.version
       } catch (error) {
-        setIpfsError(`IPFS connection error: ${error.message}`)
+        let { message } = error
+
+        if (!error.status) {
+          const htmlData = parseHTML(error)
+          message = htmlData.item(0)
+          message = message.textContent
+        }
+
+        setIpfsError(`IPFS connection error: ${message}`)
+        setIpfsReady(false)
         return
       }
       setIpfsReady(Boolean(await ipfs.id()))
