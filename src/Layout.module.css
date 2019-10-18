@@ -7,6 +7,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  min-height: calc(100vh - (var(--spacer) * 2));
 }
 
 @media screen and (min-width: 640px) {

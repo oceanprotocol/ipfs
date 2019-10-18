@@ -9,3 +9,7 @@
   font-size: var(--font-size-large);
   color: var(--brand-grey-light);
 }
+
+.info code {
+  font-size: 90%;
+}

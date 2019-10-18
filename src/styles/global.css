@@ -1,14 +1,6 @@
 @import '_variables.css';
 
-html,
-body,
-#__next {
-  height: 100%;
-  max-height: calc(100vh - (var(--page-frame) * 2));
-}
-
 html {
-  height: 100%;
   font-size: var(--font-size-root);
 }
 

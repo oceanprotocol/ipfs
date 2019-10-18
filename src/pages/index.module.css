@@ -9,20 +9,19 @@
 
 @media screen and (min-width: 1140px) {
   .grid {
-    max-width: 70rem;
+    max-width: 75rem;
     text-align: left;
     grid-template-columns: 2fr 1fr;
   }
 
   .grid > aside {
-    margin-top: calc(var(--spacer) * 2);
+    margin-top: calc(var(--spacer) * 3);
   }
 }
 
 .header {
   width: 100%;
-  max-width: 40rem;
-  margin: 0 auto calc(var(--spacer) * 2) auto;
+  margin-bottom: calc(var(--spacer) * 2);
 }
 
 .header svg {
