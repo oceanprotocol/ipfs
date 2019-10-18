@@ -1,8 +1,14 @@
 dist: xenial
+sudo: required
 language: node_js
 node_js: node
 
 cache: npm
+
+before_install:
+  # Fixes an issue where the max file watch count is exceeded, triggering ENOSPC
+  # https://stackoverflow.com/questions/22475849/node-js-error-enospc#32600959
+  - echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
 # will run `npm install` automatically here
 

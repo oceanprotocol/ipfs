@@ -1,7 +1,15 @@
+@import '../styles/_variables.css';
+
 .add {
   max-width: 40rem;
   width: 100%;
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-all;
+}
+
+.error {
+  font-size: var(--font-size-small);
+  color: var(--red);
+  margin-top: var(--spacer);
 }

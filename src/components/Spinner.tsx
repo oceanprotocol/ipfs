@@ -1,6 +1,17 @@
 import React from 'react'
 import styles from './Spinner.module.css'
 
-export default function Spinner() {
-  return <div className={styles.spinner} />
+const Spinner = ({ message }: { message?: string }) => {
+  return (
+    <div className={styles.spinner}>
+      {message && (
+        <div
+          className={styles.spinnerMessage}
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
+      )}
+    </div>
+  )
 }
+
+export default Spinner
