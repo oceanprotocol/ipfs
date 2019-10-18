@@ -1,8 +1,39 @@
 @import '../styles/_variables.css';
 
+.grid {
+  display: grid;
+  gap: calc(var(--spacer) * 3);
+  max-width: 40rem;
+  margin: calc(var(--spacer) * 2) auto var(--spacer) auto;
+}
+
+@media screen and (min-width: 1140px) {
+  .grid {
+    max-width: 70rem;
+    text-align: left;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .grid > aside {
+    margin-top: calc(var(--spacer) * 2);
+  }
+}
+
 .header {
   width: 100%;
-  margin-top: var(--spacer);
+  max-width: 40rem;
+  margin: 0 auto calc(var(--spacer) * 2) auto;
+}
+
+.header svg {
+  width: 80px;
+  height: 80px;
+}
+
+@media screen and (min-width: 1140px) {
+  .header svg {
+    margin-left: 0;
+  }
 }
 
 .title {
@@ -19,12 +50,4 @@
 .description {
   font-size: var(--font-size-large);
   color: var(--brand-grey-lighter);
-  max-width: 40rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.header svg {
-  width: 80px;
-  height: 80px;
 }

@@ -5,22 +5,28 @@ import '../styles/global.css'
 
 import Add from '../components/Add'
 import Logo from '@oceanprotocol/art/logo/logo-white.svg'
-import { title, description } from '../../site.config'
+import { title, description, learnMore } from '../../site.config'
 import styles from './index.module.css'
 
 import Layout from '../Layout'
+import Info from '../components/Info.mdx'
 
 const Home = () => (
   <Layout>
-    <header className={styles.header}>
-      <Logo />
-      <h1 className={styles.title}>{title}</h1>
-      <p
-        className={styles.description}
-        dangerouslySetInnerHTML={{ __html: description }}
-      />
-    </header>
-    <Add />
+    <div className={styles.grid}>
+      <div>
+        <header className={styles.header}>
+          <Logo />
+          <h1 className={styles.title}>{title}</h1>
+          <p className={styles.description}>{description}</p>
+          <a href={learnMore}>Learn More →</a>
+        </header>
+
+        <Add />
+      </div>
+
+      <Info />
+    </div>
   </Layout>
 )
 

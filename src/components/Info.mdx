@@ -1,0 +1,32 @@
+import styles from './Info.module.css'
+
+<aside className={styles.info}>
+
+## Gateway
+
+```text
+https://ipfs.oceanprotocol.com/ipfs/<hash>
+https://ipfs.oceanprotocol.com/ipns/<domain>
+```
+
+## API
+
+The IPFS node exposes selected endpoints:
+
+- `/api/v0/add`
+- `/api/v0/id`
+- `/api/v0/version`
+
+To use e.g. with [js-ipfs-http-client](https://github.com/ipfs/js-ipfs-http-client):
+
+```js
+import ipfsClient from 'ipfs-http-client'
+
+const ipfs = ipfsClient({
+  host: 'ipfs.oceanprotocol.com',
+  port: '443',
+  protocol: 'https'
+})
+```
+
+</aside>

@@ -1,11 +1,18 @@
 @import '../styles/_variables.css';
 
 .add {
-  max-width: 40rem;
   width: 100%;
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-all;
+}
+
+.title {
+  font-size: var(--font-size-base);
+  color: var(--brand-grey-lighter);
+  margin-bottom: calc(var(--spacer) / 2);
+  margin-top: 0;
+  text-align: left;
 }
 
 .error {

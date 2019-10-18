@@ -12,6 +12,8 @@
   "author": "Matthias Kretschmann <matthias@oceanprotocol.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "@mdx-js/loader": "^1.5.1",
+    "@next/mdx": "^9.1.1",
     "@oceanprotocol/art": "^2.2.0",
     "@oceanprotocol/typographies": "^0.1.0",
     "@zeit/next-css": "^1.0.1",

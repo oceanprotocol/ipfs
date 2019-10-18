@@ -1,4 +1,5 @@
 const withCSS = require('@zeit/next-css')
+const withMDX = require('@next/mdx')()
 
 const withSvgr = (nextConfig = {}, nextComposePlugins = {}) => {
   return Object.assign({}, nextConfig, {
@@ -25,11 +26,13 @@ const withSvgr = (nextConfig = {}, nextComposePlugins = {}) => {
 }
 
 module.exports = withSvgr(
-  withCSS({
-    cssModules: true,
-    cssLoaderOptions: {
-      importLoaders: 1,
-      localIdentName: '[local]___[hash:base64:5]'
-    }
-  })
+  withMDX(
+    withCSS({
+      cssModules: true,
+      cssLoaderOptions: {
+        importLoaders: 1,
+        localIdentName: '[local]___[hash:base64:5]'
+      }
+    })
+  )
 )
