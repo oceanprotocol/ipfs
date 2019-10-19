@@ -24,9 +24,9 @@ const ipfsConfig: IpfsConfig = {
 
 async function addToIpfs(
   files: File[],
-  setFileSizeReceived: (size: string) => void
+  setFileSizeReceived: (size: string) => void,
+  ipfs: any
 ) {
-  const { ipfs } = useIpfsApi(ipfsConfig)
   const file = [...files][0]
   const fileDetails = { path: file.name, content: file }
 
@@ -36,12 +36,12 @@ async function addToIpfs(
   })
 
   // CID of wrapping directory is returned last
-  const cid = response[response.length - 1].hash
+  const cid = `${response[response.length - 1].hash}/${file.name}`
   return cid
 }
 
 export default function Add() {
-  const { isIpfsReady, ipfsError } = useIpfsApi(ipfsConfig)
+  const { ipfs, isIpfsReady, ipfsError } = useIpfsApi(ipfsConfig)
   const [fileHash, setFileHash] = useState()
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState()
@@ -66,7 +66,7 @@ export default function Add() {
     setFileSize(totalSize)
 
     try {
-      const cid = await addToIpfs(acceptedFiles, setFileSizeReceived)
+      const cid = await addToIpfs(acceptedFiles, setFileSizeReceived, ipfs)
       if (!cid) return
       setFileHash(cid)
       setLoading(false)
@@ -89,14 +89,12 @@ export default function Add() {
           ipfs://{fileHash}
         </a>
       ) : (
-        <>
-          <Dropzone
-            multiple={false}
-            handleOnDrop={handleOnDrop}
-            disabled={!isIpfsReady}
-            error={error || ipfsError}
-          />
-        </>
+        <Dropzone
+          multiple={false}
+          handleOnDrop={handleOnDrop}
+          disabled={!isIpfsReady}
+          error={error || ipfsError}
+        />
       )}
     </div>
   )

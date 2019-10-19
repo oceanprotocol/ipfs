@@ -1,0 +1,28 @@
+@import '../styles/_variables.css';
+
+/* default: red square */
+.status {
+  width: var(--font-size-mini);
+  height: var(--font-size-mini);
+  display: inline-block;
+  background: var(--red);
+  margin-right: calc(var(--spacer) / 8);
+}
+
+/* yellow triangle */
+.loading {
+  composes: status;
+  background: none;
+  width: 0;
+  height: 0;
+  border-left: calc(var(--font-size-mini) / 1.7) solid transparent;
+  border-right: calc(var(--font-size-mini) / 1.7) solid transparent;
+  border-bottom: var(--font-size-mini) solid var(--yellow);
+}
+
+/* green circle */
+.online {
+  composes: status;
+  border-radius: 50%;
+  background: var(--green);
+}

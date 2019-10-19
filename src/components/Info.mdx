@@ -1,17 +1,18 @@
+import Status from './Status'
 import styles from './Info.module.css'
 
-export default ({ children }) => (
-  <aside className={styles.info}>{children}</aside>
-)
+export default ({ children }) => {
+  return <aside className={styles.info}>{children}</aside>
+}
 
-## Gateway
+## <Status type="gateway" /> Gateway
 
 ```text
 https://ipfs.oceanprotocol.com/ipfs/<hash>
 https://ipfs.oceanprotocol.com/ipns/<domain>
 ```
 
-## API
+## <Status type="api" /> API
 
 The IPFS node exposes selected endpoints:
 
