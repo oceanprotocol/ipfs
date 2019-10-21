@@ -6,7 +6,7 @@
     "start": "next dev",
     "build": "next build",
     "serve": "next start",
-    "test": "eslint --ignore-path .gitignore 'src/**/*.{ts,tsx}'",
+    "test": "eslint --ignore-path .gitignore 'src/**/*.{js,jsx,ts,tsx}'",
     "format": "prettier ./src/**/*.{css,yml,js,jsx,ts,tsx,json} --write"
   },
   "author": "Matthias Kretschmann <matthias@oceanprotocol.com>",
@@ -32,15 +32,23 @@
     "@types/react": "^16.9.9",
     "@typescript-eslint/eslint-plugin": "^2.4.0",
     "@typescript-eslint/parser": "^2.4.0",
+    "cssnano": "^4.1.10",
     "eslint": "^6.5.1",
     "eslint-config-oceanprotocol": "^1.5.0",
     "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^1.18.2",
     "typescript": "^3.6.4"
   },
   "engines": {
     "node": "10.x"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import useIpfsApi, { IpfsConfig } from '../hooks/use-ipfs-api'
+import { formatBytes, addToIpfs } from '../utils'
 import { ipfsNodeUri, ipfsGateway } from '../../site.config'
 import Dropzone from './Dropzone'
 import styles from './Add.module.css'
 import Spinner from './Spinner'
-import useIpfsApi, { IpfsConfig } from '../hooks/use-ipfs-api'
-
-export function formatBytes(a: number, b: number) {
-  if (a === 0) return '0 Bytes'
-  const c = 1024
-  const d = b || 2
-  const e = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
-  const f = Math.floor(Math.log(a) / Math.log(c))
-  return parseFloat((a / Math.pow(c, f)).toFixed(d)) + ' ' + e[f]
-}
 
 const { hostname, port, protocol } = new URL(ipfsNodeUri)
 
@@ -20,24 +12,6 @@ const ipfsConfig: IpfsConfig = {
   protocol: protocol.replace(':', ''),
   host: hostname,
   port: port || '443'
-}
-
-async function addToIpfs(
-  files: File[],
-  setFileSizeReceived: (size: string) => void,
-  ipfs: any
-) {
-  const file = [...files][0]
-  const fileDetails = { path: file.name, content: file }
-
-  const response = await ipfs.add(fileDetails, {
-    wrapWithDirectory: true,
-    progress: (length: number) => setFileSizeReceived(formatBytes(length, 0))
-  })
-
-  // CID of wrapping directory is returned last
-  const cid = `${response[response.length - 1].hash}/${file.name}`
-  return cid
 }
 
 export default function Add() {

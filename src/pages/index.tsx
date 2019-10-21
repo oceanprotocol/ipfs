@@ -1,15 +1,13 @@
 import React from 'react'
-
-import '@oceanprotocol/typographies/css/ocean-typo.css'
-import '../styles/global.css'
-
-import Add from '../components/Add'
-import Logo from '@oceanprotocol/art/logo/logo-white.svg'
+import dynamic from 'next/dynamic'
 import { title, description, learnMore } from '../../site.config'
+import Layout from '../Layout'
 import styles from './index.module.css'
 
-import Layout from '../Layout'
-import Info from '../components/Info.mdx'
+import Logo from '@oceanprotocol/art/logo/logo-white.svg'
+
+const Add = dynamic(() => import('../components/Add'))
+const Info = dynamic(() => import('../components/Info.mdx'))
 
 const Home = () => (
   <Layout>

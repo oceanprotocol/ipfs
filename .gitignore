@@ -1,7 +1,7 @@
 node_modules
 npm-debug.log
 .DS_Store
-/.next/
-/out/
-/build
+.next
+out
+build
 package-lock.json
