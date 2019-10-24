@@ -9,21 +9,31 @@ export function formatBytes(a: number, b: number) {
   return parseFloat((a / Math.pow(c, f)).toFixed(d)) + ' ' + e[f]
 }
 
-export async function addToIpfs(
-  files: File[],
-  setFileSizeReceived: (size: string) => void,
-  ipfs: any
-) {
+const streamFiles = (ipfs: any, file: any) =>
+  new Promise((resolve, reject) => {
+    const stream = ipfs.addReadableStream({
+      wrapWithDirectory: true
+      // progress: (length: number) => setFileSizeReceived(formatBytes(length, 0))
+    })
+
+    stream.on('data', (data: any) => {
+      console.log(`Added ${data.path} hash: ${data.hash}`)
+
+      // The last data event will contain the directory hash
+      if (data.path === '') resolve(data.hash)
+    })
+
+    stream.on('error', reject)
+    stream.write(file)
+    stream.end()
+  })
+
+export async function addToIpfs(files: File[], ipfs: any) {
   const file = [...files][0]
   const fileDetails = { path: file.name, content: file }
 
-  const response = await ipfs.add(fileDetails, {
-    wrapWithDirectory: true,
-    progress: (length: number) => setFileSizeReceived(formatBytes(length, 0))
-  })
-
-  // CID of wrapping directory is returned last
-  const cid = `${response[response.length - 1].hash}/${file.name}`
+  const directoryCid = await streamFiles(ipfs, fileDetails)
+  const cid = `${directoryCid}/${file.name}`
   return cid
 }
 

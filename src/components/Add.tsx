@@ -21,7 +21,7 @@ export default function Add() {
   const [message, setMessage] = useState()
   const [error, setError] = useState()
   const [fileSize, setFileSize] = useState()
-  const [fileSizeReceived, setFileSizeReceived] = useState('')
+  const [fileSizeReceived] = useState('')
 
   useEffect(() => {
     setMessage(
@@ -40,7 +40,7 @@ export default function Add() {
     setFileSize(totalSize)
 
     try {
-      const cid = await addToIpfs(acceptedFiles, setFileSizeReceived, ipfs)
+      const cid = await addToIpfs(acceptedFiles, ipfs)
       if (!cid) return
       setFileHash(cid)
       setLoading(false)
