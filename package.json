@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@types/next-seo": "^1.10.0",
-    "@types/node": "^12.12.24",
+    "@types/node": "^13.1.6",
     "@types/react": "^16.9.17",
     "@typescript-eslint/eslint-plugin": "^2.15.0",
     "@typescript-eslint/parser": "^2.15.0",
