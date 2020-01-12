@@ -18,7 +18,7 @@
     "@oceanprotocol/typographies": "^0.1.0",
     "@zeit/next-css": "^1.0.1",
     "axios": "^0.19.0",
-    "ipfs-http-client": "^40.1.0",
+    "ipfs-http-client": "^41.0.0",
     "next": "9.1.7",
     "next-seo": "^3.2.0",
     "next-svgr": "^0.0.2",
