@@ -1,4 +1,3 @@
-const withCSS = require('@zeit/next-css')
 const withMDX = require('@next/mdx')()
 
 // eslint-disable-next-line no-unused-vars
@@ -26,13 +25,4 @@ const withSvgr = (nextConfig = {}, nextComposePlugins = {}) => {
   })
 }
 
-module.exports = withSvgr(
-  withMDX(
-    withCSS({
-      cssModules: true,
-      cssLoaderOptions: {
-        localIdentName: '[local]___[hash:base64:5]'
-      }
-    })
-  )
-)
+module.exports = withSvgr(withMDX())
