@@ -17,7 +17,7 @@
     "@oceanprotocol/art": "^2.2.0",
     "@oceanprotocol/typographies": "^0.1.0",
     "axios": "^0.19.2",
-    "ipfs-http-client": "^42.0.0",
+    "ipfs-http-client": "^43.0.0",
     "next": "9.2.2",
     "next-seo": "^4.1.0",
     "next-svgr": "^0.0.2",
