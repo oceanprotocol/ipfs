@@ -9,32 +9,26 @@ export function formatBytes(a: number, b: number) {
   return parseFloat((a / Math.pow(c, f)).toFixed(d)) + ' ' + e[f]
 }
 
-const streamFiles = (ipfs: any, file: any) =>
-  new Promise((resolve, reject) => {
-    const stream = ipfs.addReadableStream({
-      wrapWithDirectory: true
-      // progress: (length: number) => setFileSizeReceived(formatBytes(length, 0))
-    })
-
-    stream.on('data', (data: any) => {
-      console.log(`Added ${data.path} hash: ${data.hash}`)
-
-      // The last data event will contain the directory hash
-      if (data.path === '') resolve(data.hash)
-    })
-
-    stream.on('error', reject)
-    stream.write(file)
-    stream.end()
-  })
-
 export async function addToIpfs(files: File[], ipfs: any) {
   const file = [...files][0]
   const fileDetails = { path: file.name, content: file }
 
-  const directoryCid = await streamFiles(ipfs, fileDetails)
-  const cid = `${directoryCid}/${file.name}`
-  return cid
+  const source = await ipfs.add(fileDetails, {
+    wrapWithDirectory: true,
+    progress: (prog: number) => console.log(`received: ${prog}`)
+  })
+
+  try {
+    for await (const ipfsFile of source) {
+      // The last path will contain the directory hash
+      if (ipfsFile.path === '') {
+        const cid = `${ipfsFile.cid.toString()}/${file.name}`
+        return cid
+      }
+    }
+  } catch (err) {
+    console.error(err)
+  }
 }
 
 export async function pingUrl(url: string) {
