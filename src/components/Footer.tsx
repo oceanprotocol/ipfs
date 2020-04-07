@@ -13,7 +13,7 @@ export default function Footer() {
         All Rights Reserved
       </div>
       <div>
-        {links.map(link => (
+        {links.map((link) => (
           <a key={link.name} href={link.url}>
             {link.name}
           </a>
