@@ -7,7 +7,8 @@
 
 [![Build Status](https://flat.badgen.net/travis/oceanprotocol/ipfs?icon=travis)](https://travis-ci.com/oceanprotocol/ipfs)
 [![Now deployment](https://flat.badgen.net/badge/now/auto-deployment/21c4dd?icon=now)](https://zeit.co/oceanprotocol/ipfs)
-[![js oceanprotocol](https://flat.badgen.net/badge/js/oceanprotocol/7b1173)](https://github.com/oceanprotocol/eslint-config-oceanprotocol) [![Greenkeeper badge](https://badges.greenkeeper.io/oceanprotocol/ipfs.svg)](https://greenkeeper.io/)
+[![js oceanprotocol](https://flat.badgen.net/badge/js/oceanprotocol/7b1173)](https://github.com/oceanprotocol/eslint-config-oceanprotocol)
+[![dependabot badge](https://flat.badgen.net/dependabot/oceanprotocol/ipfs?icon=dependabot)](https://github.com/oceanprotocol/ipfs/network/updates)
 
 This repo holds a simple React app built with [Next.js](https://nextjs.org) serving as the frontpage of [ipfs.oceanprotocol.com](https://ipfs.oceanprotocol.com) from where you can add files to IPFS via drag and drop.
 
