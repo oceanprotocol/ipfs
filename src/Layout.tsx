@@ -27,7 +27,6 @@ export default function Layout({
           title,
           description,
           images: [{ url: `${url}/share.png` }],
-          // eslint-disable-next-line @typescript-eslint/camelcase
           site_name: title
         }}
         twitter={{

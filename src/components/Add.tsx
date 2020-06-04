@@ -16,11 +16,11 @@ const ipfsConfig: IpfsConfig = {
 
 export default function Add() {
   const { ipfs, isIpfsReady, ipfsError } = useIpfsApi(ipfsConfig)
-  const [fileHash, setFileHash] = useState()
+  const [fileHash, setFileHash] = useState('')
   const [loading, setLoading] = useState(false)
-  const [message, setMessage] = useState()
-  const [error, setError] = useState()
-  const [fileSize, setFileSize] = useState()
+  const [message, setMessage] = useState('')
+  const [error, setError] = useState('')
+  const [fileSize, setFileSize] = useState('')
   const [fileSizeReceived] = useState('')
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function Add() {
     if (!acceptedFiles[0]) return
 
     setLoading(true)
-    setError(null)
+    setError('')
 
     const totalSize = formatBytes(acceptedFiles[0].size, 0)
     setFileSize(totalSize)
@@ -54,7 +54,7 @@ export default function Add() {
     <div className={styles.add}>
       {loading ? (
         <Spinner message={message} />
-      ) : fileHash ? (
+      ) : fileHash !== '' ? (
         <a
           target="_blank"
           rel="noopener noreferrer"

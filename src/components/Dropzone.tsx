@@ -13,7 +13,7 @@ export default function Dropzone({
   multiple?: boolean
   error?: string
 }) {
-  const onDrop = useCallback(acceptedFiles => handleOnDrop(acceptedFiles), [
+  const onDrop = useCallback((acceptedFiles) => handleOnDrop(acceptedFiles), [
     handleOnDrop
   ])
 
@@ -39,7 +39,7 @@ export default function Dropzone({
         `Drop it like it's hot!`
       ) : multiple ? (
         `Drag 'n' drop some files here, or click to select files`
-      ) : error ? (
+      ) : error || error !== '' ? (
         <div className={styles.error}>{error}</div>
       ) : (
         `Drag 'n' drop a file here, or click to select a file`
