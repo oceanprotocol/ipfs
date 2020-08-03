@@ -12,22 +12,22 @@
   "author": "Matthias Kretschmann <matthias@oceanprotocol.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@mdx-js/loader": "^1.6.5",
-    "@next/mdx": "^9.4.4",
+    "@mdx-js/loader": "^1.6.16",
+    "@next/mdx": "^9.5.1",
     "@oceanprotocol/art": "^2.2.0",
     "@oceanprotocol/typographies": "^0.1.0",
     "axios": "^0.19.2",
     "ipfs-http-client": "^44.2.0",
-    "next": "^9.4.4",
-    "next-seo": "^4.5.0",
+    "next": "^9.5.1",
+    "next-seo": "^4.7.3",
     "next-svgr": "^0.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-dropzone": "^11.0.0"
+    "react-dropzone": "^11.0.2"
   },
   "devDependencies": {
     "@types/next-seo": "^1.10.0",
-    "@types/node": "^14.0.0",
+    "@types/node": "^14.0.27",
     "@types/react": "^16.9.43",
     "@typescript-eslint/eslint-plugin": "^3.6.0",
     "@typescript-eslint/parser": "^3.6.1",
@@ -35,9 +35,9 @@
     "eslint-config-oceanprotocol": "^1.5.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react": "^7.20.5",
     "prettier": "^2.0.5",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.7"
   },
   "repository": {
     "type": "git",
