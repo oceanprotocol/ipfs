@@ -23,7 +23,7 @@
     "next-svgr": "^0.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-dropzone": "^11.0.2"
+    "react-dropzone": "^11.3.0"
   },
   "devDependencies": {
     "@types/next-seo": "^1.10.0",
